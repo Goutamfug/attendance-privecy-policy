@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Attendance Guru</title>
+  <meta name="description" content="Privacy Policy for Attendance Guru (com.aistudio.attendanceregister.app). Learn how we protect employee attendance, wages, and shift records with an offline-first architecture.">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #1e56a0;
+      --primary-light: #e8f1fa;
+      --primary-dark: #133b70;
+      --secondary: #00818a;
+      --text-main: #161c24;
+      --text-muted: #5a6675;
+      --bg-body: #f8fafc;
+      --bg-card: #ffffff;
+      --border-card: #e2e8f0;
+      --badge-bg: #ecfdf5;
+      --badge-text: #065f46;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text-main: #f1f5f9;
+        --text-muted: #94a3b8;
+        --bg-body: #0f172a;
+        --bg-card: #1e293b;
+        --border-card: #334155;
+        --primary: #3b82f6;
+        --primary-light: rgba(59, 130, 246, 0.15);
+        --primary-dark: #60a5fa;
+        --badge-bg: rgba(16, 185, 129, 0.15);
+        --badge-text: #34d399;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.65;
+      padding: 0;
+      margin: 0;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #1e40af, #2563eb);
+      color: #ffffff;
+      padding: 56px 20px 48px;
+      text-align: center;
+      position: relative;
+    }
+
+    .header-container {
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      background: #ffffff;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2);
+    }
+
+    .app-icon svg {
+      width: 36px;
+      height: 36px;
+      fill: #1e40af;
+    }
+
+    h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 12px;
+    }
+
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: #e0e7ff;
+      margin-top: 14px;
+    }
+
+    .header-meta span {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      backdrop-filter: blur(4px);
+    }
+
+    main {
+      max-width: 860px;
+      margin: -24px auto 60px;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .summary-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 28px;
+    }
+
+    .summary-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 6px 12px;
+      border-radius: 9999px;
+    }
+
+    .section-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 .section-num {
+      background: var(--primary-light);
+      color: var(--primary);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      font-weight: 800;
+    }
+
+    h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 18px 0 8px;
+      color: var(--text-main);
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      font-size: 0.98rem;
+    }
+
+    ul {
+      margin: 10px 0 16px 20px;
+      color: var(--text-muted);
+    }
+
+    li {
+      margin-bottom: 8px;
+      padding-left: 4px;
+      font-size: 0.96rem;
+    }
+
+    li strong {
+      color: var(--text-main);
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin: 16px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border-card);
+    }
+
+    th {
+      background-color: var(--primary-light);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    td {
+      color: var(--text-muted);
+    }
+
+    td strong {
+      color: var(--text-main);
+    }
+
+    .contact-box {
+      background: var(--primary-light);
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-top: 14px;
+    }
+
+    .contact-box a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-card);
+      padding: 30px 20px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding: 36px 16px 36px;
+      }
+      h1 {
+        font-size: 1.75rem;
+      }
+      .section-card {
+        padding: 20px;
+      }
+      th, td {
+        padding: 10px 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="app-icon" aria-label="App Icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+        </svg>
+      </div>
+      <h1>Privacy Policy</h1>
+      <p style="color: #dbeafe; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+        Attendance Guru &bull; Staff Attendance Register & Salary Calculator
+      </p>
+      <div class="header-meta">
+        <span>Application ID: <strong>com.aistudio.attendanceregister.app</strong></span>
+        <span>Version: <strong>2.0</strong></span>
+        <span>Effective Date: <strong>November 1, 2026</strong></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Key Summary Card -->
+    <div class="summary-card">
+      <div class="summary-title">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+        </svg>
+        <span>Privacy Commitment at a Glance</span>
+      </div>
+      <p>
+        <strong>Attendance Guru</strong> is built on an <strong>offline-first architecture</strong>. Your staff records, shift logs, overtime records, and salary figures are stored exclusively in your device's private SQLite database (Room). We do not collect, sell, or monetize your organizational records.
+      </p>
+      <div class="badge-row">
+        <div class="badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+          Offline-First Local Storage
+        </div>
+        <div class="badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          Zero Third-Party Advertising
+        </div>
+        <div class="badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+          Google Play Policy Compliant
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="section-card">
+      <h2><span class="section-num">1</span> Introduction & Scope</h2>
+      <p>
+        This Privacy Policy explains how <strong>Attendance Guru</strong> (referred to as "we", "us", "our", or "the App") collects, uses, handles, and protects information when you install and use our Android mobile application (Package Name: <code>com.aistudio.attendanceregister.app</code>).
+      </p>
+      <p>
+        The app is designed to assist small and medium businesses, contractors, shopkeepers, teachers, and team leaders in managing daily staff attendance, calculating overtime, recording advances, tracking daily and monthly wages, and exporting monthly reports.
+      </p>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section-card">
+      <h2><span class="section-num">2</span> Information We Collect and Manage</h2>
+      <p>
+        The App processes only the information you voluntarily enter into your attendance register:
+      </p>
+      <ul>
+        <li><strong>Staff / Worker Profiles:</strong> Names, designations/roles, phone numbers, and authorization profiles (Administrator, Teacher, Student).</li>
+        <li><strong>Attendance Records:</strong> Daily marking records (Present, Absent, Half Day, Holiday, Leave), dates, shift overtime hours, and optional shift notes.</li>
+        <li><strong>Salary & Wage Configuration:</strong> Daily wage amounts, monthly base pay, cash advances, overtime pay rates, and calculated net earnings.</li>
+        <li><strong>User Preferences:</strong> Dark/light UI mode, selected calendar month, and configured shift reminder times.</li>
+      </ul>
+
+      <h3>What We DO NOT Collect:</h3>
+      <ul>
+        <li>We <strong>do not</strong> collect background location or GPS tracking data.</li>
+        <li>We <strong>do not</strong> access your device contacts list or call logs.</li>
+        <li>We <strong>do not</strong> collect device IMEI numbers, MAC addresses, or advertising identifiers (AAID).</li>
+        <li>We <strong>do not</strong> process personal payment credentials, bank account passwords, or debit/credit card numbers.</li>
+      </ul>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section-card">
+      <h2><span class="section-num">3</span> Data Storage, Retention, and Security</h2>
+      <p>
+        <strong>1. Local Storage on Device:</strong> All attendance, staff, and wage records are stored inside a secure SQLite database powered by Android Jetpack Room. This database is sandboxed in your device's internal storage directory, inaccessible to other apps.
+      </p>
+      <p>
+        <strong>2. Cloud Backup (Optional):</strong> If you deliberately choose to use the cloud backup/restore feature, your register data is transmitted securely via TLS 1.3 encryption directly to your authenticated Google Cloud / Firebase project.
+      </p>
+      <p>
+        <strong>3. Data Retention:</strong> Records remain stored on your device until you choose to delete them within the App, or until you uninstall the App or clear storage through Android Settings.
+      </p>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section-card">
+      <h2><span class="section-num">4</span> Android Device Permissions</h2>
+      <p>
+        We declare and request only the absolute minimum permissions necessary to deliver the features you choose to use:
+      </p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Permission</th>
+              <th>Protection Level</th>
+              <th>Purpose in Attendance Guru</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>POST_NOTIFICATIONS</strong></td>
+              <td>Runtime (Android 13+)</td>
+              <td>Sends scheduled shift reminders and daily attendance prompt alerts configured by the user.</td>
+            </tr>
+            <tr>
+              <td><strong>SCHEDULE_EXACT_ALARM</strong></td>
+              <td>Normal</td>
+              <td>Triggers shift reminder alarms at the exact hour and minute selected by the user.</td>
+            </tr>
+            <tr>
+              <td><strong>FileProvider</strong></td>
+              <td>Content URI</td>
+              <td>Enables safe, secure sharing of generated PDF and CSV attendance reports via WhatsApp, Gmail, or Telegram without requesting broad storage permissions (zero-permission compliance).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        <strong>Zero Broad Storage Access:</strong> In compliance with Google Play's privacy rules, this application does <strong>not</strong> request broad storage permissions (such as <code>READ_EXTERNAL_STORAGE</code> or <code>WRITE_EXTERNAL_STORAGE</code>).
+      </p>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="section-card">
+      <h2><span class="section-num">5</span> Third-Party Services and AI Integration</h2>
+      <p>
+        The App integrates with select trusted third-party developer libraries to provide core functionality:
+      </p>
+      <ul>
+        <li>
+          <strong>Google Play Services:</strong> Used for app distribution, updates, and core Android platform functionality.
+        </li>
+        <li>
+          <strong>Firebase AI Logic (Google Gemini 3.8 Flash):</strong> The App provides an optional "AI Invite" assistant to help users craft promotional invitation messages for colleagues. When tapped, generic promotional prompts are processed through Firebase AI Logic. <strong>No staff names, attendance logs, or financial figures are sent to or processed by the AI model.</strong>
+        </li>
+        <li>
+          <strong>Firebase App Check:</strong> Protects app backend integrations against abuse and ensures request authenticity.
+        </li>
+      </ul>
+      <p>
+        We do <strong>not</strong> embed third-party advertising SDKs (such as AdMob, Meta Audience Network, or Unity Ads), and we do not track you across other applications or websites.
+      </p>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="section-card">
+      <h2><span class="section-num">6</span> User Rights and Data Deletion</h2>
+      <p>
+        You have complete control over all data managed inside Attendance Guru:
+      </p>
+      <ul>
+        <li><strong>Access & Review:</strong> View all staff members, attendance histories, overtime logs, and salary calculations at any time on the Register, Summary, and Reports screens.</li>
+        <li><strong>Modification:</strong> Edit any attendance mark, daily wage, or worker profile directly with a single tap.</li>
+        <li><strong>Data Portability / Export:</strong> Generate and export complete attendance and salary sheets in standard PDF or CSV format.</li>
+        <li><strong>Deletion:</strong> Remove individual staff members or attendance records directly inside the App.</li>
+        <li><strong>Permanent Erasure:</strong> To completely erase all data stored by the App, navigate on your device to:
+          <br><code>Settings &gt; Apps &gt; Attendance Guru &gt; Storage &gt; Clear Storage / Clear Data</code>.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Section 7 -->
+    <div class="section-card">
+      <h2><span class="section-num">7</span> Children's & Educational Privacy</h2>
+      <p>
+        When utilized by schools or teachers to monitor student attendance:
+      </p>
+      <ul>
+        <li>The App does not market to or profile children under the age of 13.</li>
+        <li>Student profiles and attendance logs are maintained strictly for educational record-keeping by the authorized instructor or administrator.</li>
+        <li>We comply with all Google Play Families policies and applicable international child data privacy regulations.</li>
+      </ul>
+    </div>
+
+    <!-- Section 8 -->
+    <div class="section-card">
+      <h2><span class="section-num">8</span> Changes to This Policy</h2>
+      <p>
+        We may update our Privacy Policy periodically to reflect app updates, new regulatory standards, or legal requirements. When changes are made:
+      </p>
+      <ul>
+        <li>The updated policy will be immediately published at this URL and inside the App under <strong>Roles & Settings &gt; Privacy Policy</strong>.</li>
+        <li>The "Effective Date" at the top will be updated accordingly.</li>
+      </ul>
+    </div>
+
+    <!-- Section 9 -->
+    <div class="section-card">
+      <h2><span class="section-num">9</span> Contact Us & Developer Information</h2>
+      <p>
+        If you have any questions, suggestions, or concerns regarding this Privacy Policy or your data protection rights, please contact the developer:
+      </p>
+      <div class="contact-box">
+        <p style="margin-bottom: 6px;"><strong>Developer:</strong> Gautam Kumar</p>
+        <p style="margin-bottom: 6px;"><strong>Application Name:</strong> Attendance Guru</p>
+        <p style="margin-bottom: 6px;"><strong>Package Name:</strong> <code>com.aistudio.attendanceregister.app</code></p>
+        <p style="margin-bottom: 0;"><strong>Direct Contact Email:</strong> <a href="mailto:gautamkumar798260@gmail.com">gautamkumar798260@gmail.com</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Attendance Guru. All rights reserved.</p>
+    <p style="margin-top: 6px;">
+      This Privacy Policy is hosted publicly for Google Play Store compliance.
+    </p>
+  </footer>
+
+</body>
+</html>
